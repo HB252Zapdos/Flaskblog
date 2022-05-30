@@ -8,6 +8,16 @@
     {% extends "base.html"%} {% block content %}
     <h1>Flask Blog</h1>
     <p><a href="/create" role="button">新規登録</a></p>
+    <p>{{message}}</p>
+    {%- if flag==true %}
+    <div><img src="../imagebox/image/{{image_name}}"alt="{{image_name}}"></div>
+    {%-else %}
+    <form action="/up/" method="POST" ecctype="multipart/form-data">
+    <div><input type="file" name="image" accept="image/*"required></div>
+    <div><input tyoe="submit" value="写真を送信"></div>
+    <input type="submit" value="更新">
+    </form>
+    {%-endif %}
     <article>
       <h2>ホーム画面</h2>
       <p>こちらはホーム画面です。</p>
