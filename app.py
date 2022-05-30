@@ -66,7 +66,7 @@ def up_post():
     filename=secure_filename(f.filename)
     filepath='imagebox/image/'+filename
     f.save(filepath)
-    return render_template('update.html',title='Form Sample(post)',message='アップロードされた画像({})'.format(filename),flag=True,image_name=filename)
+    return render_template('index.html',title='Form Sample(post)',message='アップロードされた画像({})'.format(filename),flag=True,image_name=filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
